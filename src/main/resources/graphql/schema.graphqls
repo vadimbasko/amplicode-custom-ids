@@ -7,12 +7,20 @@ schema {
 
 "Mutation root"
 type Mutation {
+  deleteOwner(ownerId: ID): Void
   deleteTestEntity(id: ID): Void
+  updateOwner(input: OwnerInput): Owner
   updateTestEntity(input: TestEntityInput): TestEntity
+}
+
+type Owner {
+  ownerId: ID
 }
 
 "Query root"
 type Query {
+  owner(ownerId: ID): Owner
+  ownerList: [Owner]
   testEntity(id: ID): TestEntity
   testEntityList: [TestEntity]
   userInfo: UserInfo
@@ -58,6 +66,10 @@ scalar Url
 
 "Java Type: Void"
 scalar Void
+
+input OwnerInput {
+  ownerId: ID
+}
 
 input TestEntityInput {
   id: ID
