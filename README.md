@@ -1,0 +1,1 @@
+Example of usage entities with custom id names in amplicode.
