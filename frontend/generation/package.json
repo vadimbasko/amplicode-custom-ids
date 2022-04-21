@@ -1,0 +1,9 @@
+{
+  "name": "amplicode-mvp-petclinic-generation",
+  "devDependencies": {
+    "@amplicode/codegen": "^0.16.0"
+  },
+  "scripts": {
+    "listGenerators": "amplicodegen list -s generators.json"
+  }
+}

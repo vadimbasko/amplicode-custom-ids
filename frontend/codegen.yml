@@ -1,0 +1,10 @@
+schema: ../src/main/resources/graphql/schema.graphqls
+documents:
+  - 'src/**/*.(ts|tsx)'
+  - '!src/gql/**/*'
+generates:
+  ./src/gql:
+    preset: gql-tag-operations-preset
+hooks:
+  afterAllFileWrite:
+    - prettier --write
