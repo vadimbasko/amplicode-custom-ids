@@ -2,19 +2,30 @@ export const typeDefs = /* GraphQL */ `
   # Mutation root
   type Mutation {
     deleteOwner(ownerId: ID): Void
+    deletePet(customizedId: ID): Void
     deleteTestEntity(id: ID): Void
     updateOwner(input: OwnerInput): Owner
+    updatePet(input: PetInput): Pet
     updateTestEntity(input: TestEntityInput): TestEntity
   }
 
   type Owner {
+    firstName: String
+    lastName: String
     ownerId: ID
+  }
+
+  type Pet {
+    customizedId: ID
+    identificationNumber: String
   }
 
   # Query root
   type Query {
     owner(ownerId: ID): Owner
     ownerList: [Owner]
+    pet(customizedId: ID): Pet
+    petList: [Pet]
     testEntity(id: ID): TestEntity
     testEntityList: [TestEntity]
     userInfo: UserInfo
@@ -62,7 +73,14 @@ export const typeDefs = /* GraphQL */ `
   scalar Void
 
   input OwnerInput {
+    firstName: String
+    lastName: String
     ownerId: ID
+  }
+
+  input PetInput {
+    customizedId: ID
+    identificationNumber: String
   }
 
   input TestEntityInput {
