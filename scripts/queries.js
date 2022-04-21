@@ -18,7 +18,7 @@ exports.ownerDetailsQuery = `query Get_Owner($id: ID) {
     }
   }`;
 
-exports.ownerUpsertMutation = `mutation Update_Owner($input: OwnerInputDTOInput) {
+exports.ownerUpsertMutation = `mutation Update_Owner($input: OwnerInput) {
     updateOwner(input: $input) {
       ownerId
     }
